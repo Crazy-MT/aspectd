@@ -1,4 +1,5 @@
 import 'package:example/route_helper.dart';
+import 'package:example/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lifecycle_detect/lifecycle_detect.dart';
@@ -90,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+    utils.printDebugLog("main");
     LifecycleDetect.getInstance().addLifecycleObserver(LifecycleObserver(
       onResume: (String pageName,bool isNative){
      print('LifecycleDetect=======onResume:::pageName:$pageName   isNative:$isNative');

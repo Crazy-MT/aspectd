@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:lifecycle_detect/lifecycle_detect.dart';
+import 'package:example/utils.dart';
 
 @pragma("vm:entry-point")
 class HookImpl {
@@ -333,13 +334,16 @@ class PageEvent {
 class CustomLog {
   static void d(String str) {
     print("CustomLog:::::ddddd:::::$str");
+    utils.printDebugLog("CustomLog:::::ddddd:::::$str");
   }
 
   static void i(String str) {
     print("CustomLog:::::iiiii:::::$str");
+    utils.printDebugLog("CustomLog:::::iiiii:::::$str");
   }
 
   static void w(String str) {
     print("CustomLog:::::wwwww:::::$str");
+    utils.printDebugLog("CustomLog:::::wwwww:::::$str");
   }
 }
