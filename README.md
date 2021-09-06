@@ -1,5 +1,28 @@
 # AspectD
 
+
+参考：![FlutterAopDemo](https://github.com/Mao-x-w/FlutterAopDemo)
+
+
+运行本项目：
+1. fvm install 2.2.3
+2. fvm use 2.2.3
+3. aspectd 最新 1.1.1
+4. 将aspectd源码中的git patch文件合并到源码工程中
+    cd ${path-for-aspectd}
+    git apply --3way xxx/aspectD/0001-aspectD.path
+5. 删除原有flutter sdk目录下的缓存文件
+    rm bin/cache/flutter_tools.stamp
+6. 重新构建新的flutter编译工具：
+    fvm flutter doctor -v
+7. 在 aspectd/aspectd_impl
+    fvm flutter pub get
+8. 在 aspectd/example
+    fvm flutter pub get
+9. 在 aspectd/example
+    fvm flutter run --debug --verbose
+
+
 <a href="https://github.com/Solido/awesome-flutter">
    <img alt="Awesome Flutter" src="https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square" />
 </a>
