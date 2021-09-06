@@ -9,7 +9,7 @@
 2. fvm use 2.2.3
 3. aspectd 最新 1.1.1
 4. 将aspectd源码中的git patch文件合并到源码工程中
-    cd ${path-for-aspectd}
+    cd ${path-for-flutter}
     git apply --3way xxx/aspectD/0001-aspectD.path
 5. 删除原有flutter sdk目录下的缓存文件
     rm bin/cache/flutter_tools.stamp

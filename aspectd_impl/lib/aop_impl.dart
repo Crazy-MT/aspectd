@@ -103,8 +103,8 @@ import 'package:aspectd/aspectd.dart';
 //     print('Aspectd41');
 //   }
 // }
-@Aspect()
-@pragma("vm:entry-point")
+@Aspect() // Aspect注解可以使得像asepctd源码example中aop_impl.dart这样的AOP实现类被方便的识别和提取，也可以起到方便开关的作用，如果想禁用掉这段AOP逻辑，移除@Aspect注解即可
+@pragma("vm:entry-point") // 在AOT变一下，如果不能被应用主入口(main)最终可能调用到，那么将被视为无用代码而被丢弃掉。AOP代码因为其注入逻辑的无侵入性，所以不会被main调用，因为使用此注解告诉编译器不要丢弃这段逻辑。
 class ExecuteDemo {
   @pragma("vm:entry-point")
   ExecuteDemo();
