@@ -129,11 +129,18 @@ class ExecuteDemo {
     print('Aspectd:KWLM52');
   }
 
- @Call("package:example\\/.+\\.dart", ".*", "-.+", isRegex: true)
+ @Execute("package:example\\/.+\\.dart", ".*", "-.+", isRegex: true)
  @pragma("vm:entry-point")
  dynamic instanceUniversalHook(PointCut pointcut) {
    print('[KWLM11]Before:${pointcut.target}-${pointcut.function}-${pointcut.namedParams}-${pointcut.positionalParams}');
    dynamic obj = pointcut.proceed();
    return obj;
  }
+
+  @Call("package:flutter_codex_demo/test.dart", "A", "+A")
+  @pragma("vm:entry-point")
+  void _incrementA(PointCut pointcut) {
+    pointcut.proceed();
+// todo report class A initialize
+  }
 }
